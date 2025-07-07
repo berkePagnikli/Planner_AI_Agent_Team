@@ -5,7 +5,7 @@ from planner_agent import PlannerAgent
 from research_agent import ResearcherAgent
 from recommendation_agent import RecommendationAgent
 
-class AgentTeam:
+class TeamCompiler:
     def __init__(self):
         self.planner = PlannerAgent()
         self.researcher = ResearcherAgent()
@@ -46,8 +46,8 @@ class AgentTeam:
         )
 
 if __name__ == "__main__":
-    agent_team = AgentTeam()
-    user_query = ""
+    agent_team = TeamCompiler()
+    user_query = "how do I increase efficiency in my work from home environment?"
     solution = agent_team.solve(user_query)
 
     print("\n🛠️ Solution Generated Successfully!")

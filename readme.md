@@ -25,23 +25,26 @@ The system handles problems end-to-end - from initial analysis through to execut
 
 - **AI Services**:
   - Azure OpenAI (GPT-4o)
-  - DuckDuckGo Search API
 
 - **Key Components**:
   - `langchain_core` (Message schemas)
-  - `langchain_community` (Search tools)
-  - Structured Output Parsers
+  - `langchain_google_community` (Search tools)
 
 - **Environment Management**:
   - Azure credentials via environment variables:
     - `AZURE_OPENAI_API_KEY`
-    - `AZURE_OPENAI_API_BASE`
+    - `AZURE_OPENAI_ENDPOINT`
+    - `AZURE_OPENAI_API_VERSION`
     - `DEPLOYMENT_NAME`
+    - `GOOGLE_CSE_ID`
+    - `GOOGLE_API_KEY`
 
 <a id="workflow"></a>
 ## 3)  Workflow and System Run Down
 
-After receiving a user's query, the Planner Agent runs and develops a plan to solve the user's problem, deciding on the questions that need to be searched on the web. Next, the Researcher Agent steps in to search for answers to these questions online. Following that, the Recommendation Agent takes over and, by leveraging both the Planner Agent's plan and the web search results, prepares a comprehensive recommendation.
+After receiving a user's query, the Planner Agent runs and develops a plan to solve the user's problem, deciding on the questions that need to be searched on the web. Next, the Researcher Agent steps in to search for answers to these questions online. Following that, the Recommendation Agent takes over and, by leveraging both the Planner Agent's plan and the web search results, prepares a comprehensive recommendation. Here is the class diagram of this system:
+
+![Class Diagram](Class_Diagrams/diagram.png)
 
 <a id="example-conversation"></a>
 ## 4)  Example Conversation
